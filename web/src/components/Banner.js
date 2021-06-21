@@ -1,15 +1,15 @@
-import React from 'react'
-import { PlayState, Tween } from 'react-gsap'
+import React from "react";
+import { PlayState, Tween } from "react-gsap";
 
 const Banner = () => {
-  const tween = React.useRef(null)
+  const tween = React.useRef(null);
   return (
     <div className=" bg-primary h-14 flex items-center">
       <div className="overflow-hidden w-full">
         <Tween
           ref={tween}
-          from={{ x: '-1000px' }}
-          to={{ x: '100%' }}
+          from={{ x: "-1000px" }}
+          to={{ x: "100%" }}
           duration={35}
           playState={PlayState.play}
           repeat="-1"
@@ -24,7 +24,7 @@ const Banner = () => {
         </Tween>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

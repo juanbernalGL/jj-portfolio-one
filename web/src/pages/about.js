@@ -22,13 +22,43 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 // import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
-import { responsiveTitle1 } from "../components/typography.module.css";
+// import { responsiveTitle1 } from "../components/typography.module.css";
+
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
 
 export const query = graphql`
+  fragment SanityImage on SanityMainImage {
+    crop {
+      _key
+      _type
+      top
+      bottom
+      left
+      right
+    }
+    hotspot {
+      _key
+      _type
+      x
+      y
+      height
+      width
+    }
+    asset {
+      _id
+    }
+  }
+
   query AboutPageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
       id
       title
+      subtitle
+      mainImage {
+        ...SanityImage
+        alt
+      }
       _rawBody
     }
   }
@@ -61,8 +91,34 @@ const AboutPage = (props) => {
     <Layout>
       <SEO title={page.title} />
       <Container>
-        <h1 className={responsiveTitle1}>{page.title}</h1>
-        <BlockContent blocks={page._rawBody || []} />
+        <div className="flex flex-row">
+          <div className=" min-w-max bg-gradient-to-b from-secondary to-electric-green pt-0 pb-3 pr-3">
+            <img
+              src={imageUrlFor(buildImageObj(page.mainImage))
+                .auto("format")
+                .url()}
+              alt={page.mainImage.alt}
+            />
+          </div>
+          <div className="flex flex-col -ml-8">
+            <h1 className="about-title">{page.title}</h1>
+            <div className="bg-primary px-8 py-6">
+              <div dangerouslySetInnerHTML={{ __html: page.subtitle }} />
+            </div>
+          </div>
+        </div>
+
+        {/* <BlockContent blocks={page._rawBody || []} /> */}
+        {/* <div className="bg-primary px-8 py-6">
+          <p className="text-white text-lg font-barlow">
+            My name is Jesús, but everyone calls me{" "}
+            <span className="text-error">Chuz.</span> I am a digital product
+            designer & Illustrator from Costa Rica, currently working for
+            Gorilla Gorilla Logic. I come from a diverse background in design.
+            currently focused on UI/UX but if you have any other design or
+            illustration project in mind, contact me and let’s have a talk.
+          </p>
+        </div> */}
         {/* {personNodes && personNodes.length > 0 && (
           <PeopleGrid items={personNodes} title="People" />
         )} */}

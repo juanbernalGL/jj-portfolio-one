@@ -20,3 +20,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.about-title {
+  @apply text-error font-abril leading-tight;  
+  font-size: 80px;
+  max-width: 255px;
+}

@@ -12,6 +12,16 @@ export default {
       type: "string",
     },
     {
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
+    },
+    {
+      name: "mainImage",
+      type: "mainImage",
+      title: "Main image",
+    },
+    {
       name: "body",
       title: "Body",
       type: "blockContent",
