@@ -6,8 +6,14 @@ import Navbar from "./Navbar";
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 
+import favicon from "../assets/images/favicon.ico";
+import Helmet from "react-helmet";
+
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className="min-h-screen min-w-min bg-white bg-hero-pattern flex flex-row">
+    <Helmet>
+      <link rel="icon" href={favicon} />
+    </Helmet>
     <Header
       siteTitle={siteTitle}
       onHideNav={onHideNav}
@@ -16,7 +22,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
     />
     <div className="w-8/12 lg:10/12 flex flex-col">
       <Navbar />
-      <div className={styles.content}>{children}</div>
+      <div>{children}</div>
       <footer className={styles.footer}>
         <div className={styles.footerWrapper}>
           <div className={styles.siteInfo}>

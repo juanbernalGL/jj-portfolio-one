@@ -30,7 +30,6 @@ function LayoutContainer(props) {
 
   return (
     <Layout
-      className="min-h-screen min-w-min bg-white bg-hero-pattern flex flex-row"
       {...props}
       showNav={showNav}
       siteTitle={data.site.title}

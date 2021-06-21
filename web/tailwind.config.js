@@ -1,7 +1,7 @@
 const theme = require("./src/tailwind/theme");
 
 module.exports = {
-  purge: [],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false,
   theme: {
     extend: { ...theme },
