@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./header";
 
 import Navbar from "./Navbar";
-
+import Banner from "./Banner";
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 
@@ -22,6 +22,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
     />
     <div className="w-8/12 lg:10/12 flex flex-col">
       <Navbar />
+      <Banner />
       <div>{children}</div>
       <footer className={styles.footer}>
         <div className={styles.footerWrapper}>
