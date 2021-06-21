@@ -17,6 +17,11 @@ import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
 
+import page from "./page";
+import blockContent from "./blockContent";
+import figure from "./figure";
+import slideshow from "./slideshow";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -35,6 +40,10 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     excerptPortableText,
+    page,
+    blockContent,
+    figure,
+    slideshow,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
