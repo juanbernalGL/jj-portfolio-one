@@ -10,6 +10,7 @@ import {
   responsiveTitle4,
   blockQuote,
   paragraph,
+  nameTitle,
 } from "../typography.module.css";
 
 const serializers = {
@@ -31,6 +32,10 @@ const serializers = {
         case "blockquote":
           return (
             <blockquote className={blockQuote}>{props.children}</blockquote>
+          );
+        case "nameTitle":
+          return (
+            <blockquote className={nameTitle}>{props.children}</blockquote>
           );
 
         default:

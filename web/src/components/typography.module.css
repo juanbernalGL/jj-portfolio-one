@@ -136,3 +136,8 @@
     line-height: var(--font-large-line-height);
   }
 }
+
+
+.name-title {
+  @apply text-red-600;
+}
