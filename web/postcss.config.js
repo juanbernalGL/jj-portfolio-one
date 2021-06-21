@@ -13,5 +13,7 @@ module.exports = () => ({
         },
       },
     }),
+    require("autoprefixer"),
+    require("tailwindcss"),
   ],
 });
