@@ -15,6 +15,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import BlockContent from "../components/block-content";
+import JobList from "../components/job-list";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 // import PeopleGrid from '../components/people-grid'
@@ -60,6 +61,15 @@ export const query = graphql`
         alt
       }
       _rawBody
+      jobs {
+        id
+        title
+        group
+        enterprise
+        timeline
+        workPosition
+        description
+      }
     }
   }
 `;
@@ -76,6 +86,7 @@ const AboutPage = (props) => {
   }
 
   const page = data && data.page;
+  const { jobs } = page;
   // const personNodes =
   //   data &&
   //   data.people &&
@@ -109,6 +120,13 @@ const AboutPage = (props) => {
         </div>
 
         <BlockContent blocks={page._rawBody || []} />
+        {
+          jobs.length && <JobList jobs={jobs}></JobList>
+          // jobs.map((job) => (
+          //   <div key={job.id}>{/* <JobList jobs={jobs}></JobList> */}</div>
+          // ))}
+        }
+
         {/* <div className="bg-primary px-8 py-6">
           <p className="text-white text-lg font-barlow">
             My name is Jesús, but everyone calls me{" "}

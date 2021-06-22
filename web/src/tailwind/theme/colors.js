@@ -10,6 +10,8 @@ module.exports = {
 
     secondary: "#FCFF6F",
 
+    "secondary-grey": "#5A5A5A",
+
     neutral: "#4A4A4A",
 
     error: "#D93A26",
