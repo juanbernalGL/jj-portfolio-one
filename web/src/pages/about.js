@@ -108,7 +108,7 @@ const AboutPage = (props) => {
           </div>
         </div>
 
-        {/* <BlockContent blocks={page._rawBody || []} /> */}
+        <BlockContent blocks={page._rawBody || []} />
         {/* <div className="bg-primary px-8 py-6">
           <p className="text-white text-lg font-barlow">
             My name is Jesús, but everyone calls me{" "}
