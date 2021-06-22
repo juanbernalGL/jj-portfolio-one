@@ -26,5 +26,16 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      title: "Jobs Title",
+      name: "jobs",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "job" }],
+        },
+      ],
+    },
   ],
 };
