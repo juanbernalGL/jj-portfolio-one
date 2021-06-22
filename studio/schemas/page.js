@@ -37,5 +37,20 @@ export default {
         },
       ],
     },
+    {
+      name: "separator",
+      type: "text",
+      title: "Separator",
+    },
+    {
+      title: "Skills",
+      name: "skills",
+      type: "array",
+      of: [
+        {
+          type: "string",
+        },
+      ],
+    },
   ],
 };

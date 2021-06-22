@@ -27,6 +27,8 @@ import Layout from "../containers/layout";
 
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
+import Separator from "../components/separator";
+import Skills from "../components/skills";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -61,6 +63,8 @@ export const query = graphql`
         alt
       }
       _rawBody
+      separator
+      skills
       jobs {
         id
         title
@@ -120,26 +124,9 @@ const AboutPage = (props) => {
         </div>
 
         <BlockContent blocks={page._rawBody || []} />
-        {
-          jobs.length && <JobList jobs={jobs}></JobList>
-          // jobs.map((job) => (
-          //   <div key={job.id}>{/* <JobList jobs={jobs}></JobList> */}</div>
-          // ))}
-        }
-
-        {/* <div className="bg-primary px-8 py-6">
-          <p className="text-white text-lg font-barlow">
-            My name is Jesús, but everyone calls me{" "}
-            <span className="text-error">Chuz.</span> I am a digital product
-            designer & Illustrator from Costa Rica, currently working for
-            Gorilla Gorilla Logic. I come from a diverse background in design.
-            currently focused on UI/UX but if you have any other design or
-            illustration project in mind, contact me and let’s have a talk.
-          </p>
-        </div> */}
-        {/* {personNodes && personNodes.length > 0 && (
-          <PeopleGrid items={personNodes} title="People" />
-        )} */}
+        {jobs.length && <JobList jobs={jobs}></JobList>}
+        <Separator label={page.separator}></Separator>
+        <Skills skills={page.skills}></Skills>
       </Container>
     </Layout>
   );
