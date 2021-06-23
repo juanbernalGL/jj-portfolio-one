@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { imageUrlFor } from "../lib/image-url";
 
 import { responsiveTitle3 } from "./typography.module.css";
+import BlogCategories from "./blog-categories";
 
 function BlogPostPreview(props) {
   return (
@@ -14,7 +15,7 @@ function BlogPostPreview(props) {
       className={props.isInList ? styles.inList : styles.inGrid}
       to={getBlogUrl(props.publishedAt, props.slug.current)}
     >
-      <div className={styles.leadMediaThumb}>
+      {/* <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.mainImage))
@@ -25,8 +26,8 @@ function BlogPostPreview(props) {
             alt={props.mainImage.alt}
           />
         )}
-      </div>
-      <div className={styles.text}>
+      </div> */}
+      {/* <div className={styles.text}>
         <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
         {props._rawExcerpt && (
           <div className={styles.excerpt}>
@@ -36,6 +37,14 @@ function BlogPostPreview(props) {
         <div className={styles.date}>
           {format(new Date(props.publishedAt), "MMMM Mo, yyyy")}
         </div>
+      </div> */}
+      <div className="ml-20">
+        <h3 className="font-barlow text-error font-semibold text-lg">
+          {props.title}
+        </h3>
+        <h3 className=" font-barlow font-normal text-sm text-primary">
+          <BlogCategories categories={props.categories} />
+        </h3>
       </div>
     </Link>
   );

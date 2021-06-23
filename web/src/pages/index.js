@@ -58,6 +58,9 @@ export const query = graphql`
           slug {
             current
           }
+          categories {
+            title
+          }
         }
       }
     }
@@ -99,7 +102,7 @@ const IndexPage = (props) => {
         <h1 hidden>Welcome to {site.title}</h1>
         {postNodes && (
           <BlogPostPreviewList
-            title="Latest blog posts"
+            title=""
             nodes={postNodes}
             browseMoreHref="/archive/"
           />
