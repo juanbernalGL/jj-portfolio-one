@@ -1,64 +1,49 @@
 import * as styles from "./blog-post.module.css";
-import { differenceInDays, formatDistance, format } from "date-fns";
-import AuthorList from "./author-list";
+// import { differenceInDays, formatDistance, format } from "date-fns";
+// import AuthorList from "./author-list";
 import Container from "./container";
 import PortableText from "./portableText";
 import React from "react";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
+import BlogCategories from "./blog-categories";
+import Arrow from "../assets/svg/arrow.svg";
 
 function BlogPost(props) {
-  const {
-    _rawBody,
-    authors,
-    categories,
-    title,
-    mainImage,
-    publishedAt,
-  } = props;
+  const { _rawBody, copyright, categories, title, mainImage } = props;
   return (
-    <article className={styles.root}>
-      {mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
-          <img
-            src={imageUrlFor(buildImageObj(mainImage))
-              .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
-              .fit("crop")
-              .auto("format")
-              .url()}
-            alt={mainImage.alt}
-          />
+    <article className="px-6 py-10 flex flex-row">
+      <div className="flex flex-row items-start">
+        <p className="post-title opacity-70 flex flex-row">projects</p>
+        <img src={Arrow} alt="Arrow" className="pt-2 px-4" />
+      </div>
+
+      <div>
+        <h2 className="post-title">{title}</h2>
+        <div className="pl-10">
+          <BlogCategories categories={categories} />
         </div>
-      )}
-      <Container>
-        <div className={styles.grid}>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
-            {_rawBody && <PortableText blocks={_rawBody} />}
+        {mainImage && mainImage.asset && (
+          <div className="flex align-middle justify-center py-10">
+            <img
+              className="w-64"
+              src={imageUrlFor(buildImageObj(mainImage)).url()}
+              alt={mainImage.alt}
+            />
           </div>
-          <aside className={styles.metaContent}>
-            {publishedAt && (
-              <div className={styles.publishedAt}>
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? formatDistance(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), "MMMM Mo, yyyy")}
-              </div>
-            )}
-            {authors && <AuthorList items={authors} title="Authors" />}
-            {categories && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
-                  {categories.map((category) => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </aside>
-        </div>
-      </Container>
+        )}
+        <Container>
+          <div className={styles.grid}>
+            <div className={styles.mainContent}>
+              {_rawBody && <PortableText blocks={_rawBody} />}
+            </div>
+            <aside className={styles.metaContent}></aside>
+            <div className="flex align-middle justify-center">
+              <p>{copyright}</p>
+            </div>
+          </div>
+        </Container>
+      </div>
     </article>
   );
 }

@@ -21,6 +21,7 @@ export const query = graphql`
         alt
       }
       title
+      copyright
       slug {
         current
       }
@@ -76,7 +77,7 @@ const BlogPostTemplate = (props) => {
           <GraphQLErrorList errors={errors} />
         </Container>
       )}
-
+      {/* <pre>{JSON.stringify(post, null, 2)}</pre> */}
       {post && <BlogPost {...post} />}
     </Layout>
   );

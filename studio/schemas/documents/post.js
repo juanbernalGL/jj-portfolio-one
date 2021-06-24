@@ -68,6 +68,12 @@ export default {
       type: "bodyPortableText",
       title: "Body",
     },
+    {
+      name: "copyright",
+      type: "string",
+      title: "Copyright",
+      description: "Copyright text",
+    },
   ],
   orderings: [
     {

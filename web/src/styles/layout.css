@@ -21,8 +21,44 @@ code {
     monospace;
 }
 
+h1 {
+  @apply font-barlow text-5xl text-error;
+}
+
+h2 {
+  @apply font-barlow text-4xl text-error;
+}
+
+h3 {
+  @apply font-barlow text-lg text-error;
+}
+
+p {
+  @apply font-barlow text-primary;
+}
+
+ul {
+  @apply font-barlow text-primary  list-inside list-disc pl-4;
+}
+
+img {
+  @apply py-6;
+}
+
 .about-title {
   @apply text-error font-abril leading-tight;  
   font-size: 80px;
   max-width: 255px;
+}
+
+.post-title {
+  @apply font-abril text-error text-3xl pl-8;
+}
+
+.post-title-h3 {
+  @apply font-barlow text-error text-lg mb-5;
+}
+
+.post-text {
+  @apply font-barlow text-primary text-sm;
 }

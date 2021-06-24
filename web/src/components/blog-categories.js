@@ -5,12 +5,12 @@ const BlogCategories = ({ categories }) => {
     <div className="flex flex-row">
       {categories &&
         categories.map((item, index) => (
-          <p key={item} className=" font-barlow text-xs text-primary">
+          <div key={item} className="font-barlow text-xs text-primary py-0">
             {item.title}
             {index < categories.length - 1 && (
-              <span className=" font-barlow text-primary px-1"> • </span>
+              <span className=" font-barlow text-primary py-0 px-1"> • </span>
             )}
-          </p>
+          </div>
         ))}
     </div>
   );
