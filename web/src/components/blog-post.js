@@ -4,6 +4,7 @@ import * as styles from "./blog-post.module.css";
 import Container from "./container";
 import PortableText from "./portableText";
 import React from "react";
+import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import BlogCategories from "./blog-categories";
@@ -14,7 +15,9 @@ function BlogPost(props) {
   return (
     <article className="px-6 py-10 flex flex-row">
       <div className="flex flex-row items-start">
-        <p className="post-title opacity-70 flex flex-row">projects</p>
+        <Link to="/">
+          <p className="post-title opacity-70 flex flex-row">projects</p>
+        </Link>
         <img src={Arrow} alt="Arrow" className="pt-2 px-4" />
       </div>
 
