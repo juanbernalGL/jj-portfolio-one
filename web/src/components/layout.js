@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+import { Link } from "gatsby";
 
 import Navbar from "./Navbar";
 import Banner from "./Banner";
@@ -32,9 +32,11 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
       </footer>
     </div>
     <div className="w-4/12 lg:2/12 border-l-2 border-b-2 border-primary flex flex-col">
-      <div className="h-80 flex justify-center static">
-        <img src={ZeroanimaLogo} alt="ZeroanimaLogo" className="" />
-      </div>
+      <Link to="/">
+        <div className="h-80 flex justify-center static">
+          <img src={ZeroanimaLogo} alt="ZeroanimaLogo" className="" />
+        </div>
+      </Link>
 
       <div className="h-8 border-b-2 border-primary left-0">
         <p className="text-2xl pl-1 tracking-wider font-normal">SINCE</p>

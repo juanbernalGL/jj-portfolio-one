@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 const Navbar = () => {
   return (
     <div className="h-24 w-full flex justify-evenly items-center">
-      <Link to="/">
+      <Link to="/projects">
         <p className="text-3xl font-barlow">projects</p>
       </Link>
       <img src={Vector} alt="Vector-left" className="" />

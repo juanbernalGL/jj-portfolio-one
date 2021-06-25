@@ -10,6 +10,7 @@ import category from "./documents/category";
 import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
 import job from "./documents/job";
+import home from "./documents/home";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -46,6 +47,7 @@ export default createSchema({
     figure,
     slideshow,
     job,
+    home,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
