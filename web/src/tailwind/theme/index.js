@@ -32,5 +32,6 @@ module.exports = {
     abril: ["Abril Fatface"],
     merri: ["Merriweather"],
     barlow: ["Barlow Condensed"],
+    roboto: ["Roboto Mono"],
   },
 };
