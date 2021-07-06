@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { useForm } from "react-hook-form";
 import { init, send } from "emailjs-com";
@@ -27,41 +27,37 @@ export const query = graphql`
 const ContactPage = (props) => {
   const { data, errors } = props;
   init(USER_ID);
-  // const [formValues, handleInputChange] = useForm({
-  //   name: "",
-  //   email: "",
-  //   project: "",
-  //   comments: "",
-  // });
-
-  // const { name, email, project, comments } = formValues;
-
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors: frmError },
-  } = useForm();
+    reset,
+  } = useForm({ defaultValues: { comments: "anything" } });
+
+  const [isSent, setIsSent] = useState(false);
+
   const onSubmit = (data) => {
-    console.log("data Init :>> ", data);
     const template_params = { ...data };
-    console.log("USER_ID :>> ", USER_ID);
-    console.log("TEMPLATE_ID :>> ", TEMPLATE_ID);
-    console.log("template_params :>> ", template_params);
-    console.log("SERVICE_ID :>> ", SERVICE_ID);
-    // data.preventDefault(); // Prevents default refresh by the browser
     send(SERVICE_ID, TEMPLATE_ID, template_params).then(
       (result) => {
-        alert("Message Sent, We will get back to you shortly", result.text);
+        reset({ comments: "" });
+        console.log(result);
+        setIsSent(true);
+        // alert("Message Sent, We will get back to you shortly", result.text);
       },
       (error) => {
         console.log("error :>> ", error);
-        alert("An error occurred, Please try again", error.text);
+        setIsSent(false);
+        // alert("An error occurred, Please try again", error.text);
       }
     );
-  }; // your form submit function which will invoke after successful validation
+  };
 
-  console.log(watch("example"));
+  React.useEffect(async () => {
+    const result = await fetch("./api/formValues.json"); // result: { firstName: 'test', lastName: 'test2' }
+    console.log("result :>> ", result);
+    reset({ comments: "" }); // asynchronously reset your form values
+  }, [reset]);
 
   if (errors) {
     return (
@@ -72,10 +68,6 @@ const ContactPage = (props) => {
   }
 
   const page = data && data.page;
-  // const personNodes =
-  //   data &&
-  //   data.people &&
-  //   mapEdgesToNodes(data.people).filter(filterOutDocsWithoutSlugs)
 
   if (!page) {
     throw new Error(
@@ -176,6 +168,11 @@ const ContactPage = (props) => {
             </button>
           </form>
         </div>
+        {isSent && (
+          <div className="w-full flex justify-center text-purple font-barlow text-lg">
+            I got it! Thanks! Will get back to you ASAP
+          </div>
+        )}
       </Container>
     </Layout>
   );
