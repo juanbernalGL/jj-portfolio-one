@@ -57,14 +57,36 @@ img {
 }
 
 .contact-input {
-  @apply text-xs border-2 p-2 border-primary w-full md:w-full mb-2 font-roboto;
+  @apply text-xs border-2 p-2 border-primary w-full md:w-full font-roboto;
+  @apply focus:border-purple;
+}
+
+.contact-input-error {
+  @apply text-xs border-2 p-2 border-error w-full md:w-full font-roboto;
+  @apply focus:outline-none focus:ring focus:border-error;
+}
+
+.contact-textarea {
+  @apply text-xs border-2 p-2 border-primary w-full md:w-full mt-2 font-roboto;
+  @apply focus:border-purple;
+  resize: none;
+}
+
+.contact-textarea-error {
+  @apply text-xs border-2 p-2 border-error w-full md:w-full mt-2 font-roboto;
+  @apply focus:border-purple;
+  resize: none;
 }
 
 .contact-btn {
   @apply border-r-2 border-b-2 border-error;
-  @apply w-11 bg-primary mb-2 ml-3 pt-2;
+  @apply w-11 bg-primary ml-3;
   @apply text-white  font-abril text-xl;
-  @apply flex flex-col justify-items-center items-center;
+  @apply flex flex-col flex-wrap items-center place-content-center;
+}
+
+.error-msg {
+  @apply text-error text-xs font-barlow p-0
 }
 
 .post-title {

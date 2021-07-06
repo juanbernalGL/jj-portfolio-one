@@ -23,5 +23,7 @@ module.exports = {
     deep: "#E5E5E5",
 
     "electric-green": "#87F698",
+
+    purple: "#7B61FF",
   },
 };
