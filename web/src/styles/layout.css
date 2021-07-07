@@ -58,23 +58,23 @@ img {
 
 .contact-input {
   @apply text-xs border-2 p-2 border-primary w-full md:w-full font-roboto;
-  @apply focus:border-purple;
+  @apply focus:outline-none focus:border-purple;
 }
 
 .contact-input-error {
   @apply text-xs border-2 p-2 border-error w-full md:w-full font-roboto;
-  @apply focus:outline-none focus:ring focus:border-error;
+  @apply focus:outline-none focus:border-purple;
 }
 
 .contact-textarea {
   @apply text-xs border-2 p-2 border-primary w-full md:w-full mt-2 font-roboto;
-  @apply focus:border-purple;
+  @apply focus:outline-none focus:border-purple;
   resize: none;
 }
 
 .contact-textarea-error {
   @apply text-xs border-2 p-2 border-error w-full md:w-full mt-2 font-roboto;
-  @apply focus:border-purple;
+  @apply focus:outline-none focus:border-purple;
   resize: none;
 }
 

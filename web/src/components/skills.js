@@ -8,7 +8,7 @@ const Skills = ({ skills }) => {
         {skills.map((item) => (
           <div
             key={item}
-            className="font-barlow text-sm border-primary border-2 px-4 py-3 m-1"
+            className="font-barlow text-sm border-primary border px-4 py-3 m-1 text-primary"
           >
             {item}
           </div>

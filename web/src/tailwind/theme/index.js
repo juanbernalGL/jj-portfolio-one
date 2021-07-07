@@ -13,6 +13,10 @@ module.exports = {
     ...colors.colors,
   },
   letterSpacing: {
+    "wide-1": "0.1em",
+    "wide-2": "0.2em",
+    "wide-3": "0.3em",
+    "wide-4": "0.4em",
     widest: "0.8em",
   },
   maxHeight: {

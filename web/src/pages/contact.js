@@ -19,6 +19,7 @@ export const query = graphql`
     page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
       id
       title
+      subtitle
       _rawBody
     }
   }
@@ -81,9 +82,9 @@ const ContactPage = (props) => {
       <Container>
         <div className="container p-16">
           <h1 className="contact-title">{page.title}</h1>
-          <BlockContent blocks={page._rawBody || []} />
+          <p className="font-barlow text-lg font-primary">{page.subtitle}</p>
           <form
-            className="flex flex-row w-full"
+            className="flex flex-row w-full py-7"
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex flex-col w-full">
@@ -173,6 +174,7 @@ const ContactPage = (props) => {
             I got it! Thanks! Will get back to you ASAP
           </div>
         )}
+        <BlockContent blocks={page._rawBody || []} />
       </Container>
     </Layout>
   );

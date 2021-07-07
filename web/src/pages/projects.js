@@ -40,7 +40,7 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
-      limit: 6
+      limit: 50
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -98,16 +98,20 @@ const ProjectPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
+
       {/* <Container> */}
-      <h1 hidden>Welcome to {site.title}</h1>
-      {postNodes && (
-        <BlogPostPreviewList
-          title=""
-          nodes={postNodes}
-          browseMoreHref="/archive/"
-        />
-      )}
-      {/* </Container> */}
+      <div className="px-2 md:px-44">
+        <h1 hidden>Welcome to {site.title}</h1>
+        <h1 className="contact-title py-7 px-8">projects</h1>
+        {postNodes && (
+          <BlogPostPreviewList
+            title=""
+            nodes={postNodes}
+            browseMoreHref="/archive/"
+          />
+        )}
+        {/* </Container> */}
+      </div>
     </Layout>
   );
 };

@@ -67,19 +67,12 @@ const IndexPage = (props) => {
 
   const page = data && data.page;
   console.log(data);
-  const {
-    title,
-    description,
-    footer,
-    downloadLabel,
-    mainImage,
-    buttonLabel,
-  } = page;
+  const { title, description, footer, downloadLabel, mainImage } = page;
 
   return (
     <Layout>
-      <div className="p-4 md:p-16 flex flex-col md:flex-row gap-6">
-        <div>
+      <div className="p-4 md:p-16 flex flex-col md:flex-row gap-6 w-full">
+        <div className="w-5/6 md:w-4/6">
           <div>
             <h1 className="font-abril text-7xl py-8">{title}</h1>
           </div>
@@ -91,18 +84,13 @@ const IndexPage = (props) => {
           <div dangerouslySetInnerHTML={{ __html: footer }} />
           <SocialMedia />
         </div>
-        <div>
+        <div className="flex flex-row pt-10 w-full md:w-2/6 justify-end order-first md:order-last">
           {mainImage && mainImage.asset && (
-            <div className="flex flex-col align-middle justify-items-center justify-center pt-10 ">
-              <img
-                className="w-64 z-0"
-                src={imageUrlFor(buildImageObj(mainImage)).url()}
-                alt={mainImage.alt}
-              />
-              <button className=" -mt-12 ml-16 z-10 w-28 h-10 font-merri text-sm bg-white border-b-4 border-r-4 border-error flex items-center justify-around">
-                {buttonLabel}
-              </button>
-            </div>
+            <img
+              className="w-48 h-60"
+              src={imageUrlFor(buildImageObj(mainImage)).url()}
+              alt={mainImage.alt}
+            />
           )}
         </div>
       </div>

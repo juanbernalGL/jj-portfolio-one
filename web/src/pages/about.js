@@ -125,7 +125,7 @@ const AboutPage = (props) => {
 
         <BlockContent blocks={page._rawBody || []} />
         {jobs.length && <JobList jobs={jobs}></JobList>}
-        <Separator label={page.separator}></Separator>
+        {/* <Separator label={page.separator}></Separator> */}
         <Skills skills={page.skills}></Skills>
       </Container>
     </Layout>
