@@ -107,7 +107,7 @@ const AboutPage = (props) => {
       <SEO title={page.title} />
       <Container>
         <div className="flex flex-row">
-          <div className=" min-w-max bg-gradient-to-b from-secondary to-electric-green pt-0 pb-3 pr-3">
+          <div className=" max-w-sm pt-0 pb-3 pr-3">
             <img
               src={imageUrlFor(buildImageObj(page.mainImage))
                 .auto("format")
