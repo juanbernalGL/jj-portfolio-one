@@ -6,12 +6,9 @@ import { root, caption } from "./figure.module.css";
 
 function Figure(props) {
   return (
-    <figure className={root}>
+    <figure className="flex flex-wrap justify-center">
       {props.asset && (
-        <img
-          src={imageUrlFor(buildImageObj(props)).width(1200).url()}
-          alt={props.alt}
-        />
+        <img src={imageUrlFor(buildImageObj(props)).url()} alt={props.alt} />
       )}
       <figcaption className={caption}>{props.caption}</figcaption>
     </figure>

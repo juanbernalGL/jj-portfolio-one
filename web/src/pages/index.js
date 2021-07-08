@@ -93,6 +93,14 @@ const IndexPage = (props) => {
             />
           )}
         </div>
+        {/* <a
+          href="#"
+          data-title="/chi•ro•TEo/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      The action&#10; of chirotear.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      “Chuz likes to chirotear all day”"
+        >
+          Link
+        </a> */}
       </div>
     </Layout>
     // <Layout>
