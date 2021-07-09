@@ -7,7 +7,7 @@ import "../styles/layout.css";
 
 import favicon from "../assets/images/favicon.ico";
 import ZeroanimaLogo from "../assets/svg/Zeroanima_Logo_red.svg";
-import ZeroanimaLogoSecondary from "../assets/images/Zeroanima_Logo_white_small.png";
+import ZeroanimaLogoSecondary from "../assets/images/Zeroanima_Logo_3x.png";
 import Designed from "../assets/svg/Designed.svg";
 import Helmet from "react-helmet";
 import SocialMedia from "../components/SocialMedia";
@@ -39,7 +39,11 @@ const Layout = ({ children, path, location }) => (
         <SocialMedia />
       </div>
       <div className="flex justify-center pt-16">
-        <img src={ZeroanimaLogoSecondary} alt="ZeroanimaLogoSecondary" />
+        <img
+          src={ZeroanimaLogoSecondary}
+          alt="ZeroanimaLogoSecondary"
+          className="w-11"
+        />
       </div>
       <div className="flex justify-center pt-16">
         <a
