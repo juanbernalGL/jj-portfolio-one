@@ -2,23 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
-@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 
 body {
   margin: 0;
-  font-family: 'Abril Fatface', 'Merriweather', 'Barlow Condensed', 'Roboto Mono'
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Abril Fatface", "Merriweather", "Barlow Condensed",
+    "Roboto Mono" -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #232021;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -47,13 +48,13 @@ img {
 }
 
 .about-title {
-  @apply text-error font-abril leading-tight;  
+  @apply text-error font-abril leading-tight;
   font-size: 80px;
   max-width: 255px;
 }
 
 .contact-title {
-  @apply text-error font-abril leading-tight text-4xl;  
+  @apply text-error font-abril leading-tight text-4xl;
 }
 
 .contact-input {
@@ -86,7 +87,7 @@ img {
 }
 
 .error-msg {
-  @apply text-error text-xs font-barlow p-0
+  @apply text-error text-xs font-barlow p-0;
 }
 
 .post-title {
@@ -108,7 +109,7 @@ img {
 }
 [data-title]:after {
   content: attr(data-title);
-  background-color: #00FF00;
+  background-color: #00ff00;
   color: #111;
   font-size: 150%;
   position: absolute;
@@ -128,5 +129,7 @@ img {
   @apply font-merri text-sm bg-gradient-to-b from-secondary to-electric-green;
 }
 [data-title] {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
 }
