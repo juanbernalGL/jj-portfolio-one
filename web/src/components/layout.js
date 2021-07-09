@@ -42,7 +42,13 @@ const Layout = ({ children, path, location }) => (
         <img src={ZeroanimaLogoSecondary} alt="ZeroanimaLogoSecondary" />
       </div>
       <div className="flex justify-center pt-16">
-        <img src={Designed} alt="Designed" />
+        <a
+          href="https://www.juanjosebernal.work/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={Designed} alt="Designed" />
+        </a>
       </div>
       {/* <footer className={styles.footer}>
         <div className={styles.footerWrapper}>
