@@ -1,14 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-// import {
-//   filterOutDocsPublishedInTheFuture,
-//   filterOutDocsWithoutSlugs,
-//   mapEdgesToNodes,
-// } from "../lib/helpers";
-// import BlogPostPreviewList from "../components/blog-post-preview-list";
-// import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-// import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
@@ -93,14 +85,6 @@ const IndexPage = (props) => {
             />
           )}
         </div>
-        {/* <a
-          href="#"
-          data-title="/chi•ro•TEo/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      The action&#10; of chirotear.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      “Chuz likes to chirotear all day”"
-        >
-          Link
-        </a> */}
       </div>
     </Layout>
   );

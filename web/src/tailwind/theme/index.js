@@ -9,6 +9,12 @@ module.exports = {
   borderColor: {
     ...colors.colors,
   },
+  fill: {
+    ...colors.colors,
+  },
+  stroke: {
+    ...colors.colors,
+  },
   gradientColorStops: {
     ...colors.colors,
   },

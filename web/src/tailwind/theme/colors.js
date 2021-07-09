@@ -24,6 +24,8 @@ module.exports = {
 
     "electric-green": "#87F698",
 
+    "light-blue": "#38E9F4",
+
     purple: "#7B61FF",
   },
 };

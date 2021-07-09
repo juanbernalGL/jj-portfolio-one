@@ -133,3 +133,19 @@ img {
   position: sticky;
   top: 20px;
 }
+
+.media-btn {
+  @apply text-error fill-light-blue w-11 h-11 border-2 border-light-blue cursor-pointer bg-white hover:bg-secondary transform rotate-0 hover:-rotate-12;
+}
+
+.media-btn:active {
+  @apply transform -rotate-12 bg-light-blue border-light-blue fill-white;
+}
+
+.media-btn-even {
+  @apply text-error fill-light-blue w-11 h-11 border-2 border-light-blue cursor-pointer bg-white hover:bg-secondary transform rotate-0 hover:rotate-12;
+}
+
+.media-btn-even:active {
+  @apply transform rotate-12 bg-light-blue border-light-blue fill-white;
+}

@@ -4,15 +4,15 @@ import { Link } from "gatsby";
 import Navbar from "./Navbar";
 import Banner from "./Banner";
 import "../styles/layout.css";
-import * as styles from "./layout.module.css";
 
 import favicon from "../assets/images/favicon.ico";
 import ZeroanimaLogo from "../assets/svg/Zeroanima_Logo_red.svg";
 import ZeroanimaLogoSecondary from "../assets/images/Zeroanima_Logo_white_small.png";
 import Designed from "../assets/svg/Designed.svg";
 import Helmet from "react-helmet";
+import SocialMedia from "../components/SocialMedia";
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
+const Layout = ({ children, path, location }) => (
   <div className="min-h-screen min-w-min bg-white bg-hero-pattern flex flex-col md:flex-row">
     <Helmet>
       <link rel="icon" href={favicon} />
@@ -34,6 +34,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
       </div>
       <div>
         <p className="text-2xl pl-1 tracking-wide-4 font-abril w-28">1985</p>
+      </div>
+      <div className="flex justify-center static">
+        <SocialMedia />
       </div>
       <div className="flex justify-center pt-16">
         <img src={ZeroanimaLogoSecondary} alt="ZeroanimaLogoSecondary" />
