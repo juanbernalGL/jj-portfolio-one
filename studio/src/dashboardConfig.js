@@ -12,16 +12,15 @@ export default {
                 "NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.",
               sites: [
                 {
-                  buildHookId:
-                    "60d0aaf4837d62a6e9c9868f",
+                  buildHookId: "60d0aaf4837d62a6e9c9868f",
                   title: "Sanity Studio",
-                  name: "chuz-main-portfolio-studio",
+                  name: "jj-portfolio-one-studio",
                   apiId: "362f1510-a451-41c3-b095-8747db6c16b7",
                 },
                 {
                   buildHookId: "60d0aaf4837d62a9fac985ba",
-                  title: "Blog Website",
-                  name: "chuz-main-portfolio",
+                  title: "Developer Website",
+                  name: "jj-portfolio-one",
                   apiId: "6510a429-65e9-4fd5-8c96-e2bdfb04f986",
                 },
               ],
@@ -31,13 +30,12 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value:
-              "https://github.com/juanbernalGL/chuz-main-portfolio",
+            value: "https://github.com/juanbernalGL/jj-portfolio-one",
             category: "Code",
           },
           {
             title: "Frontend",
-            value: "https://chuz-main-portfolio.netlify.app",
+            value: "https://jj-portfolio-one.netlify.app",
             category: "apps",
           },
         ],

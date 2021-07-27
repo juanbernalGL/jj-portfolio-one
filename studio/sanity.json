@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "Chuz Main Portfolio "
-  },
   "api": {
-    "projectId": "b331tqu8",
+    "projectId": "iq7om992",
     "dataset": "production"
+  },
+  "project": {
+    "name": "JJ Portfolio One"
   },
   "plugins": [
     "@sanity/base",

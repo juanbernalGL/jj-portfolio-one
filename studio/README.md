@@ -1,1 +1,1 @@
-# chuz-main-portfolio-studio
+# jj-portfolio-one-studio

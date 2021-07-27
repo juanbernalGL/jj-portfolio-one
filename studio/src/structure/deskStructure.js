@@ -5,7 +5,7 @@ import IframePreview from "../previews/IframePreview";
 import { FaFile } from "react-icons/fa";
 
 // Web preview configuration
-const remoteURL = "https://chuz-main-portfolio.netlify.app";
+const remoteURL = "https://jj-portfolio-one.netlify.app";
 const localURL = "http://localhost:8000";
 const previewURL =
   window.location.hostname === "localhost" ? localURL : remoteURL;
